@@ -81,7 +81,7 @@ const video_player = async (guild, song) => {
 }
 
 module.exports.config = {
-    name: 'play',
+name: 'play',
 aliases: ['skip', 'stop'],
 cooldown: 0,
 description: 'Music bot',
