@@ -11,6 +11,6 @@ module.exports.run = async (bot,message,args) => {
     message.channel.send(`**${member.user.tag}** has been kicked for ${reason}`)
 }
 
-exports.help = {
+module.exports.run = {
 name: 'kick'
 }

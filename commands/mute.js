@@ -18,6 +18,6 @@ module.exports.run = async (bot,message,args) => {
         message.channel.send("User has been unmuted!")
     }, msTime)
 }
-exports.help = {
+module.exports.run = {
 name: 'mute'
 }
