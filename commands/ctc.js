@@ -30,5 +30,5 @@ module.exports.run = async (bot,message,args) => {
 }
 
 module.exports.run = {
-name: 'ctc'
+    name: 'ctc'
 }
