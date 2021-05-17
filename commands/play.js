@@ -4,9 +4,10 @@ const  Discord = require('discord.js')
 
 const queue =new Map();
 
-module.exports.run = async (message,args,cmd,bot, Discord) => {
+module.exports.run = {
+    async execute(message,args, cmd, bot, Discord){
 
-    const voice_channel = message.member.voice.channel;
+        const voice_channel = message.member.voice.channel;
         if(!voice_channel) return message.channel.send('You need to be in a channel to execute this command!');
         const permissions = voice_channel.permissionsFor(message.client.user);
         if (!permissions.has('CONNECT')) return message.channel.send('You do not have the permissions');
@@ -62,6 +63,7 @@ module.exports.run = async (message,args,cmd,bot, Discord) => {
             }
         }
     }
+}
 
 const video_player = async (guild, song) => {
     const song_queue = queue.get(guild.id);
@@ -81,7 +83,7 @@ const video_player = async (guild, song) => {
 }
 
 module.exports.config = {
-name: 'play',
+    name: 'play',
 aliases: ['skip', 'stop'],
 cooldown: 0,
 description: 'Music bot',
