@@ -5,7 +5,7 @@ const  Discord = require('discord.js')
 const queue =new Map();
 
 module.exports.run = {
-    async execute(bot, message, args){
+    async execute(bot,message,args) {
 
         const voice_channel = message.member.voice.channel;
         if(!voice_channel) return message.channel.send('You need to be in a channel to execute this command!');
