@@ -19,5 +19,5 @@ module.exports.run = async (bot,message,args) => {
     }, msTime)
 }
 module.exports.config = {
-name: 'mute'
+    name: 'mute'
 }
