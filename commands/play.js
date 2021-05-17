@@ -3,7 +3,7 @@ const ytSearch = require('yt-search');
 
 const queue =new Map();
 
-module = {
+module.exports.run = {
         name: 'play',
     aliases: ['skip', 'stop'],
     cooldown: 0,

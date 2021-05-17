@@ -1,4 +1,4 @@
-exports.run = async (bot,message,args) => {
+module.exports.run = async (bot,message,args) => {
     if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("You do not have permission to execute this command!")
     let member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
     if(!member) return message.channel.send("Invalid Member Given!");

@@ -1,6 +1,6 @@
 const ms =require("ms")
 
-exports.run = async (bot,message,args) => {
+module.exports.run = async (bot,message,args) => {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No permission!")
     let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     if(!member) return message.channel.send('Invaled User Provided!')
