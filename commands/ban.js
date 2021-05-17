@@ -12,6 +12,6 @@ module.exports.run = async (bot,message,args) => {
     message.channel.send(`**${member.user.tag}** has been banned for ${reason}`)
 }
 
-module.exports.run = {
+module.exports.config = {
     name: 'ban'
 }

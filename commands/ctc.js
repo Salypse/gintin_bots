@@ -29,6 +29,6 @@ module.exports.run = async (bot,message,args) => {
     message.channel.send('Channel has been created! Get talking at ${chanel} ')
 }
 
-module.exports.run = {
+module.exports.config = {
     name: 'ctc'
 }

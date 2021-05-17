@@ -6,6 +6,6 @@ module.exports.run = async (bot,message,args) => {
           message.channel.send(`Hello ${member.user}`)
         }
 }
-module.exports.run = {
+module.exports.config = {
   name: 'hello'
 }
