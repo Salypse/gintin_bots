@@ -1,4 +1,5 @@
 const ms =require("ms")
+const  Discord = require('discord.js')
 
 module.exports.run = async (bot,message,args) => {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No permission!")

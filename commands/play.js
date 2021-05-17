@@ -1,5 +1,6 @@
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
+const  Discord = require('discord.js')
 
 const queue =new Map();
 
