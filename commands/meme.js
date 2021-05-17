@@ -14,6 +14,6 @@ module.exports.run = async (bot,message,args) => {
     message.channel.send(memeEmbed)
 
 }
-module.exports.config = {
+exports.help = {
     name: 'meme'
 }

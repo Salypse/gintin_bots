@@ -82,7 +82,7 @@ const video_player = async (guild, song) => {
     await song_queue.text_channel.send(` Now playing **${song.title}**`)
 }
 
-module.exports.config = {
+exports.help = {
     name: 'play',
     aliases: ['skip', 'stop'],
     cooldown: 0,
