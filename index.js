@@ -15,7 +15,7 @@ bot.once('ready', () => {
 
         jsfile.forEach(f => {
             let props = require(`./commands/${f}`);
-            bot.commands.set(props.help.name, props)
+            bot.commands.set(props.help.names, props)
         })
     })
 })
