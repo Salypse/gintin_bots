@@ -5,6 +5,10 @@ const  Discord = require('discord.js')
 const queue =new Map();
 
 module.exports.run = { 
+    name: 'play',
+    aliases: ['skip', 'stop'],
+    cooldown: 0,
+    description: 'Music bot',
     async execute(bot,message,args){
 
         const voice_channel = message.member.voice.channel;
@@ -80,11 +84,4 @@ const video_player = async (guild, song) => {
         video_player(guild, song_queue.songs[0]);
     });
     await song_queue.text_channel.send(` Now playing **${song.title}**`)
-}
-
-exports.help = {
-    name: 'play',
-    aliases: ['skip', 'stop'],
-    cooldown: 0,
-    description: 'Music bot',
 }
