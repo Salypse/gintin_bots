@@ -5,7 +5,7 @@ module.exports.run = async (bot,message,args) => {
 
     if(!search) return message.channel.send('Please provide a search query')
 
-    client.player.play(message, search)
+    bot.player.play(message, search)
 
     }
 
