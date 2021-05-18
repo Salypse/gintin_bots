@@ -2,6 +2,8 @@ const  Discord = require('discord.js')
 const bot = new Discord.Client({ws: {intents: Discord.Intents.All}});
 const fs = require("fs")
 bot.commands = new Discord.Collection();
+const distube = require('distube')
+const player = new distube(client)
 
 module.exports.run = async(bot, msssage, args) => {}
 
@@ -53,6 +55,12 @@ bot.on('guildMemberAdd', (member) => {
 
    member.send(embed)
 })
+
+player.on('playSong', (message, queue, song) => {
+    message.channel.send(`${song.name} has started playing!`)
+})
+
+client.player = player;
 
 
     
