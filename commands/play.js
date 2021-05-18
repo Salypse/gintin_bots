@@ -1,7 +1,5 @@
-module.exports.run = {
-    name: "play",
+module.exports.run = async (bot,message,args) => {
 
-    async run (bot, message, args) {
         if(!message.member.voice.channel) return message.channel.send("Please join a voice channel first!")
 
         let search = args.join(" ");
@@ -10,4 +8,8 @@ module.exports.run = {
 
         client.player.play(message, search)
     }
+
+
+exports.help = {
+    name: 'mute'
 }
