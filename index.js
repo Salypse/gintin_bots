@@ -1,5 +1,5 @@
 const  Discord = require('discord.js')
-const bot = new Discord.Client({ws: {intents: Discord.Intents.All}});
+const bot = new Discord.Client()
 const fs = require("fs")
 bot.commands = new Discord.Collection();
 const distube = require('distube')
