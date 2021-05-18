@@ -3,7 +3,7 @@ const bot = new Discord.Client({ws: {intents: Discord.Intents.All}});
 const fs = require("fs")
 bot.commands = new Discord.Collection();
 const distube = require('distube')
-const player = new distube(client)
+const player = new distube(bot)
 
 module.exports.run = async(bot, msssage, args) => {}
 
