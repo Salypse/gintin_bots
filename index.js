@@ -5,7 +5,7 @@ bot.commands = new Discord.Collection();
 const distube = require('distube')
 const player = new distube(bot)
 
-module.exports.run = async(bot, msssage, args) => {}
+module.exports.run = async(bot, messsage, args) => {}
 
 bot.once('ready', () => {
     console.log('Bot online')
