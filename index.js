@@ -60,7 +60,7 @@ player.on('playSong', (message, queue, song) => {
     message.channel.send(`${song.name} has started playing!`)
 })
 
-client.player = player;
+bot.player = player;
 
 
     
