@@ -1,21 +1,15 @@
-let { RichEmbed } = require('discord.js')
-const config = require('../../config.json')
+module.exports.run = async (bot,message,args) => {
+    if(!message.member.voice.channel) return message.channel.send("Please join a voice channel first!")
 
-exports.run = async(bot, message, args) => {
-  const serverQueue = client.queue.get(msg.guild.id);
-  if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
-  if(!serverQueue) return msg.channel.send('Not playing anything right now');
-  if(serverQueue.voiceChannel.id !== msg.member.voiceChannel.id) return msg.channel.send(`You must be in **${serverQueue.voiceChannel.name}** to loop the queue`);
-  serverQueue.loop = !serverQueue.loop;
-  client.queue.set(msg.guild.id, serverQueue);
-  if(serverQueue.loop) return msg.channel.send('**🔁 Repeated current queue!**');
-  return msg.channel.send('**🔁 Unrepeated current queue!**');
-}
+    let search = args.join(" ");
+
+    if(!search) return message.channel.send('Please provide a search query')
+
+    bot.player.play.loop(message, search)
+
+    }
 
 
-
-
-exports.conf = {
-    aliases: ['loop'],
-    cooldown: "3"
+exports.help = {
+    name: 'loop'
 }
