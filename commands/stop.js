@@ -7,6 +7,6 @@ module.exports.run = async (bot,message,args) => {
     }
 
 exports.help = {
-    name: 'mute'
+    name: 'stop'
 }
     
