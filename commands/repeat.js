@@ -5,5 +5,5 @@ if (["repeat", "loop"].includes(command))
 
 
 exports.help = {
-  name: 'loop'
+  name: 'repeat'
 }
