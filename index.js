@@ -57,13 +57,13 @@ bot.on('guildMemberAdd', (member) => {
    member.send(embed)
 })
 
-const distube = new Distube(client, { searchSongs: true, emitNewSongOnly: true });
+const distube = new Distube(bot, { searchSongs: true, emitNewSongOnly: true });
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+bot.on('ready', () => {
+    console.log(`Logged in as ${bot.user.tag}!`);
 });
 
-client.on("message", async (message) => {
+bot.on("message", async (message) => {
     if (message.author.bot) return;
     if (!message.content.startsWith(config.prefix)) return;
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
