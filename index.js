@@ -3,7 +3,7 @@ const bot = new Discord.Client()
 const fs = require("fs")
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
-const distube = require('distube')
+const Distube = require('distube')
 const player = new distube(bot)
 //const config = require('.config.json')
 
@@ -58,11 +58,44 @@ bot.on('guildMemberAdd', (member) => {
    member.send(embed)
 })
 
-player.on('playSong', (message, queue, song) => {
-    message.channel.send(`${song.name} has started playing!`)
-})
+const distube = new DisTube(client, { searchSongs: true, emitNewSongOnly: true });
 
-bot.player = player;
+client.on('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on("message", async (message) => {
+    if (message.author.bot) return;
+    if (!message.content.startsWith(config.prefix)) return;
+    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+    const command = args.shift();
+
+    if (command == "play")
+        distube.play(message, args.join(" "));
+
+    if (["repeat", "loop"].includes(command))
+        distube.setRepeatMode(message, parseInt(args[0]));
+
+    if (command == "stop") {
+        distube.stop(message);
+        message.channel.send("Stopped the music!");
+    }
+
+    if (command == "skip")
+        distube.skip(message);
+
+    if (command == "queue") {
+        let queue = distube.getQueue(message);
+        message.channel.send('Current queue:\n' + queue.songs.map((song, id) =>
+            `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``
+        ).slice(0, 10).join("\n"));
+    }
+
+    if ([`3d`, `bassboost`, `echo`, `karaoke`, `nightcore`, `vaporwave`].includes(command)) {
+        let filter = distube.setFilter(message, command);
+        message.channel.send("Current queue filter: " + (filter || "Off"));
+    }
+});
 
 
     
