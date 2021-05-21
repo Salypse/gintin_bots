@@ -1,9 +1,10 @@
 const  Discord = require('discord.js')
+const distube = require('distube')
 
-if (["repeat", "loop"].includes(commands))
-        distube.setRepeatMode(message, parseInt(args[0]));
+module.exports.run = async (bot,message,args) => {
+  distube.setRepeatMode(message, parseInt(args[0]));
 
-
+}
 exports.help = {
   name: 'repeat'
 }
