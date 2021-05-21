@@ -61,7 +61,7 @@ bot.on('guildMemberAdd', (member) => {
    member.send(embed)
 })
 
-const distube = new DisTube(bot, { searchSongs: true, emitNewSongOnly: true });
+const distube = new Distube(bot, { searchSongs: true, emitNewSongOnly: true });
 
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
