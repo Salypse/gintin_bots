@@ -4,7 +4,6 @@ const fs = require("fs")
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 const Distube = require('distube')
-const distube = new DisTube(client, { searchSongs: true, emitNewSongOnly: true });
 //const config = require('.config.json')
 
 module.exports.run = async(bot, messsage, args) => {}
@@ -58,6 +57,7 @@ bot.on('guildMemberAdd', (member) => {
    member.send(embed)
 })
 
+const distube = new Distube(client, { searchSongs: true, emitNewSongOnly: true });
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
