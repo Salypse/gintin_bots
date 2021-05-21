@@ -2,8 +2,10 @@ const  Discord = require('discord.js')
 const bot = new Discord.Client()
 const fs = require("fs")
 bot.commands = new Discord.Collection();
+bot.aliases = new Discord.Collection();
 const distube = require('distube')
 const player = new distube(bot)
+//const config = require('.config.json')
 
 module.exports.run = async(bot, messsage, args) => {}
 
