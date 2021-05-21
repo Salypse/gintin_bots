@@ -8,6 +8,10 @@ const Distube = require('distube')
 
 module.exports.run = async(bot, messsage, args) => {}
 
+config = {
+    prefix: "!",
+}
+
 bot.once('ready', () => {
     console.log('Bot online')
 
@@ -28,7 +32,6 @@ bot.once('ready', () => {
 bot.on('message', (message) => {
     if(message.author.bot) return;
     if(message.channel.type !== 'text') return;
-    let prefix = '!';
     let MessageArray = message.content.split(' ');
     let cmd = MessageArray[0].slice(prefix.length)
     let args = MessageArray.slice(1)
@@ -65,8 +68,8 @@ bot.on('ready', () => {
 
 bot.on("message", async (message) => {
     if (message.author.bot) return;
-    if (!message.content.startsWith(prefix)) return;
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    if (!message.content.startsWith(config.prefix)) return;
+    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift();
 
     if (command == "play")
