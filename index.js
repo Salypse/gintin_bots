@@ -32,6 +32,7 @@ bot.once('ready', () => {
 bot.on('message', (message) => {
     if(message.author.bot) return;
     if(message.channel.type !== 'text') return;
+    let prefix = '!';
     let MessageArray = message.content.split(' ');
     let cmd = MessageArray[0].slice(prefix.length)
     let args = MessageArray.slice(1)
