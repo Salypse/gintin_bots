@@ -4,7 +4,6 @@ const fs = require("fs")
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 const Distube = require('distube')
-const player = new distube(bot)
 //const config = require('.config.json')
 
 module.exports.run = async(bot, messsage, args) => {}
