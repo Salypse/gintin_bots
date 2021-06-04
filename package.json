@@ -17,6 +17,7 @@
     "node-fetch": "^2.6.1",
     "opus": "0.0.0",
     "opusscript": "0.0.8",
+    "slappy": "^1.0.0",
     "yt-search": "^2.8.0",
     "ytdl-core": "^4.8.0"
   }
